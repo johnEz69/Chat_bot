@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Simulado</title>
+    <style>
+        /* Estilo del botón para abrir el chatbot */
+        #open-chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Color verde de WhatsApp */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo del modal (ventana emergente) */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 0 0;
+            z-index: 1000;
+        }
+
+        /* Estilo para el área de chat dentro del modal */
+        #chatbox {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 100%;
+            height: calc(100% - 60px);
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        /* Estilo para el campo de entrada y botón dentro del modal */
+        #modal-footer {
+            display: flex;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        #user-input {
+            width: 80%;
+            padding: 5px;
+        }
+
+        #send-button {
+            padding: 5px 10px;
+        }
+
+        /* Estilo para cerrar el modal */
+        #close-chatbot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón para abrir el chatbot -->
+    <button id="open-chatbot">💬</button>
+
+    <!-- Estructura del modal -->
+    <div id="chatbot-modal" class="modal">
+        <span id="close-chatbot">&times;</span>
+        <div id="chatbox"></div>
+        <div id="modal-footer">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje..." />
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
